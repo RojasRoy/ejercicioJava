@@ -1,0 +1,51 @@
+package calculadoraswich;
+
+import java.util.Scanner;
+
+
+public class CalculadoraSwich {
+
+   
+    public static void main(String[] args) {
+        Scanner tecla = new Scanner(System.in);
+        int num1, num2;
+        char simbolo;
+        
+        System.out.print("ingrese el primer número: ");
+        num1 = Integer.parseInt(tecla.nextLine());
+        
+        System.out.print("ingrese el segundo número:");
+        num2 = Integer.parseInt(tecla.nextLine());
+        
+        System.out.println("si desea sumar presione '+' ");
+        System.out.println("si desea restar presione '-' ");
+        System.out.println("si desea dividir presione '/' ");
+        System.out.println("si desea multiplicar presione 'x' ");
+        System.out.print("ingrese símbolo: ");
+        simbolo = tecla.nextLine().charAt(0);
+        
+        switch (simbolo) {
+            case '+':
+                System.out.println("resultado:" + (num1 + num2));
+                break;
+            case '-':
+                System.out.println("resultado:" + (num1 - num2));
+                break;
+            case '/':
+                if (num2 != 0) {
+                System.out.println("resultado:" + (num1 / num2));    
+                }else {
+                    System.out.println("no se puede dividir por 0");
+                }
+                break;
+            case 'x':
+            case 'X':    
+                System.out.println("resultado:" + (num1 * num2));
+                break;
+            default:
+                System.out.println("dato erroneo");
+   
+        }
+
+    }   
+}
