@@ -1,0 +1,31 @@
+/*Desarrollar un algoritmo que permita ingresar una cantidad de personas. La computadora debe
+pedir la edad de cada una y finalmente mostrar el porcentaje de personas que es mayor de edad.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    static final int EDAD_MINIMA = 18;
+    
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int cantidadPersonas, edad, contMayoresEdad = 0;
+        double porcMayoresEdad;
+
+        System.out.print("ingrese la cantidad de personas: ");
+        cantidadPersonas = Integer.parseInt(teclado.nextLine());
+        
+        for (int i = 1; i <= cantidadPersonas; i++) {
+            System.out.println("ingresa la edad de la persona n° " + i);
+            edad = Integer.parseInt(teclado.nextLine());
+            if (edad >= EDAD_MINIMA) {
+               contMayoresEdad++; 
+            }
+        }
+        
+        porcMayoresEdad = (contMayoresEdad * 100.0) / cantidadPersonas;
+        System.out.println(porcMayoresEdad + "% de persona que fueron mayores de " + EDAD_MINIMA);
+    }
+}
