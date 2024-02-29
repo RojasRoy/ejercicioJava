@@ -1,0 +1,43 @@
+/*Desarrollar un algoritmo que permita ingresar el nombre y la edad (por separado) de diferentes
+personas. La carga termina cuando en el nombre de la próxima persona se ingresa un asterisco (*).
+La computadora debe mostrar cómo se llama la persona más joven.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    final static String CORTE = "*";
+    final static String NOMBRE_INVALIDO = "@@@@@";
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        String nombre, nombreMasJoven = NOMBRE_INVALIDO;
+        int edad, minEdad = Integer.MAX_VALUE;
+
+        System.out.print("ingrese un nombre ( " + CORTE + " para cotar): ");
+        nombre = teclado.nextLine();
+
+        while (!nombre.equals(CORTE)) {
+            System.out.print("ingresá la edad para " + nombre + ": ");
+            edad = Integer.parseInt(teclado.nextLine());
+
+            if (edad < minEdad) {
+                minEdad = edad;
+                nombreMasJoven = nombre;
+            }
+
+            System.out.print("ingrese otro nombre ( " + CORTE + " para cotar): ");
+            nombre = teclado.nextLine();
+        }
+        
+        if (!nombreMasJoven.equals(NOMBRE_INVALIDO)) {
+           System.out.println("la persona más joven de " + minEdad + " años se llama " + nombreMasJoven); 
+        } else {
+            System.out.println("no se ingresaron personas");
+        }
+        
+    }
+}
