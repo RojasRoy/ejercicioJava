@@ -1,0 +1,35 @@
+/*Desarrollar un algoritmo que permita ingresar la cantidad de cierto artículo y el precio unitario de
+dicho artículo. Por cada artículo ingresado, preguntar si se desea seguir ingresando de la forma:
+"¿Deseás ingresar otro artículo? [S/N]". La carga de datos finaliza cuando se detecta una
+"n" o "N". La computadora debe mostrar el monto total del ticket.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        int cantidad;
+        double precioUnitario, montoTotal = 0;
+        char opcion;
+        
+        do {            
+            System.out.print("ingrese la cantidad del artículo: ");
+        cantidad = Integer.parseInt(teclado.nextLine());
+        
+        System.out.print("ingrese el precio unitario del artículo: ");
+        precioUnitario = Double.parseDouble(teclado.nextLine());
+        
+        montoTotal += cantidad * precioUnitario;
+        
+        System.out.print("¿desea ingresar otro artículo S/N: ");
+        opcion = teclado.nextLine().charAt(0);
+        } while (opcion != 'N' && opcion != 'n');
+        
+        System.out.println("monto total de ticket: " + montoTotal);
+        
+    }
+}
