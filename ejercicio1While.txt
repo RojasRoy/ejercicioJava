@@ -1,0 +1,28 @@
+/*Ejercicio 1: Leer un número y mostrar su cuadrado, repetir el proceso hasta que se introduzca un número negativo.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        int numero, cuadrado;
+
+        System.out.print("ingrese un número [número negativo termina el programa]: ");
+        numero = Integer.parseInt(teclado.nextLine());
+
+        while (!(numero <= 0)) {
+            cuadrado = numero * numero;
+            //cuadrado = (int)Math.pow(numero,2);
+            System.out.println("el cuadrado de " + numero + " es: " + cuadrado);
+
+            System.out.print("ingrese un número [número negativo termina el programa]: ");
+            numero = Integer.parseInt(teclado.nextLine());
+
+        }
+
+    }
+}
