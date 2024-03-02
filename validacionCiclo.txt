@@ -1,0 +1,21 @@
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        char categoria;
+
+        System.out.print("ingrese una categoria A|B|C: ");
+        categoria = Character.toUpperCase(teclado.nextLine().charAt(0) );
+
+        while (!(categoria == 'A' || categoria == 'B' || categoria == 'C')) {
+            System.out.print("ERROR - ingrese una categoria A|B|C: ");
+            categoria = teclado.nextLine().charAt(0);
+        }
+
+    }
+}
