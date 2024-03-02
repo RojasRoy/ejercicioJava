@@ -1,0 +1,27 @@
+/*Ejercicio 4: Pedir numeros hasta que se teclee uno negativo,
+y mostrar cuantos numeros se han introducido.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        int numero, contador = 0;
+
+        System.out.println("introdusca un número(un número negativo cierra el ciclo): ");
+        numero = Integer.parseInt(teclado.nextLine());
+
+        while (!(numero < 0)) {
+            contador++;
+            System.out.println("introdusca un número(un número negativo cierra el ciclo): ");
+            numero = Integer.parseInt(teclado.nextLine());
+            
+        }
+
+        System.out.println("se ha introducido " + contador + " números");
+    }
+}
