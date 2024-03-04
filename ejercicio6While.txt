@@ -1,0 +1,24 @@
+/*Ejercicio 6: Pedir numeros por teclado, hasta que ingresemos un cero y mostrar la suma de todos los números ingresador.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        int numero, suma = 0;
+        
+        do {            
+            System.out.print("ingrese un número: ");
+            numero = Integer.parseInt(teclado.nextLine());
+            
+            suma += numero;
+        } while (numero != 0);
+        
+        System.out.println("la suma de todos los números ingresados es: " + suma);
+        
+    }
+}
