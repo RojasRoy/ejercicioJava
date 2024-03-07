@@ -1,0 +1,27 @@
+/*Ejercicio8 - Pedir numero N, y mostrar todos los numero del 1 al N.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        int numero, contador = 1;
+
+        System.out.print("ingrese un número: ");
+        numero = Integer.parseInt(teclado.nextLine());
+
+        while (contador <= numero) {
+            if (contador == numero) {
+                System.out.print(contador + " ");
+            } else {
+                System.out.print(contador + " ,");
+            }
+            contador++;
+        }
+
+    }
+}
