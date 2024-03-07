@@ -1,0 +1,36 @@
+/*Ejercicio 7: Pedir números hasta que se introduzca uno negativo, y calcular la media.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+
+        Scanner teclado = new Scanner(System.in);
+        int numero, suma = 0, contador = 0;
+        float media;
+
+        System.out.print("ingrese un número: ");
+        numero = Integer.parseInt(teclado.nextLine());
+
+        while (numero >= 0) {
+
+            suma += numero;
+            contador++;
+
+            System.out.print("ingrese un número: ");
+            numero = Integer.parseInt(teclado.nextLine());
+
+        }
+
+        if (contador == 0) {
+            System.out.println("la división entre 0 no existe");
+        } else {
+            media = (float) suma / contador;
+            System.out.println("la media es " + media);
+        }
+
+    }
+}
