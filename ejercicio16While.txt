@@ -1,0 +1,26 @@
+/*Ejercicio 16: Pide un numero (que debe estar entre 1 y 10) y mostrar
+la tabla de multiplicar de dicho numero.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int numero, resultado;
+        
+        System.out.print("ingrese un número entre 1 y 10: ");
+        numero = Integer.parseInt(teclado.nextLine());
+        
+        if (numero >= 1 && numero <= 10) {
+        for (int i = 1; i <= 10; i++) {
+                resultado = i * numero;
+                System.out.println(numero + " x " + i + " = " + resultado );    
+            }
+        }else{
+                System.out.println("el número no esta dentro del rango solicitado");
+            }
+    }
+}
