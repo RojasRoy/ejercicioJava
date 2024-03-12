@@ -1,0 +1,55 @@
+/*Ejercicio 17: Una empresa que se dedica a la venta de desinfectantes necesita un programa para gestionar las facturas. 
+En cada factura figura: el código del artículo, la cantidad vendida en litros y el precio por litro. 
+Se pide de 5 facturas introducidas: Facturación total, cantidad en litros vendidos del artículo 1
+y cuantas facturas se emitieron de más de $600.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        int codArt, litro, cantLitro = 0, cantFactura = 0, artLitro1 = 0;
+        float preciLitro, cantVenta = 0, facturaTotal, facturaFinal = 0;
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("factura n° " + i);
+            System.out.print("Código del artículo: ");
+            codArt = Integer.parseInt(teclado.nextLine());
+
+            System.out.print("Cantidad de litros: ");
+            litro = Integer.parseInt(teclado.nextLine());
+
+            System.out.print("Precio por litro: ");
+            preciLitro = Float.parseFloat(teclado.nextLine());
+
+            facturaTotal = litro * preciLitro;
+
+            System.out.println("--------------");
+            System.out.println(i + "-- factura total de: $ " + facturaTotal);
+            System.out.println("--------------");
+            
+            if (codArt == 1) {
+                artLitro1 += litro;
+            }
+
+            if (facturaTotal > 600) {
+                cantFactura++;
+            }
+
+            facturaFinal += facturaTotal;
+            
+            
+        }
+
+        System.out.print("la cantidad de litros del art 1 vendidos es de: " + artLitro1 + "L");
+        System.out.println("");
+        System.out.println("las facturas mayores a $600 son de:" + cantFactura);
+        System.out.println("");
+        System.out.println("la facturacion total es de: $ " + facturaFinal);
+
+    }
+}
