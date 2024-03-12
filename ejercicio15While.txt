@@ -1,0 +1,49 @@
+/*Ejercicio 15: Dadas las edades y alturas de 5 alumnos, mostrar la edad y la estatura media,
+la cantidad de alumnos mayores de 18 años, 
+y la cantidad de alumnos que miden más de 1.75.
+.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    final static int EDAD_MAYOR = 18;
+    final static double ALTURA_MAYOR = 1.75; 
+    
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        
+        int edad, cantMayores = 0, cantAltura = 0, sumEdad = 0;
+        double altura, sumAltura = 0, mediaEdad, mediaEstatura;
+        
+        for (int i = 1; i <= 5; i++) {
+            System.out.print(i + "- ingrese la edad del alumno: ");
+            edad = Integer.parseInt(teclado.nextLine());
+            
+            System.out.print("-- ingrese la altura del alumno: ");
+            altura = Double.parseDouble(teclado.nextLine());
+            
+            sumEdad += edad;
+            sumAltura += altura;
+            
+            if (edad > EDAD_MAYOR) {
+                cantMayores++;
+            }
+            
+            if (altura > ALTURA_MAYOR) {
+                cantAltura++;
+            }
+        }
+        
+        mediaEdad = (double) sumEdad / 5;
+        mediaEstatura = sumAltura / 5;
+        
+        System.out.println("la edad media de los alumnos es: " + mediaEdad);
+        System.out.println("la cantidad de alumnos mayores a 18 años es " + cantMayores);
+        System.out.println("la altura media de los alumnos es: " + mediaEstatura);
+        System.out.println("la cantidad de alumnos que superan el 1,75 m son: " + cantAltura );
+        
+    }
+}
