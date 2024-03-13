@@ -1,0 +1,42 @@
+/*Ejercicio 19: Dadas 6 notas, escribir la cantidad de alumnos aprobados, 
+condicionados (=4) y suspensos.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int nota, cantAprobado = 0, cantCondicionado = 0, cantSuspendido = 0;
+        String alumno = "" ;
+        
+        for (int i = 1; i <= 6; i++) {
+            System.out.print(i + "- nombre de alumno: ");
+            alumno = teclado.nextLine();
+            
+            do{
+            System.out.print("ingrese la nota del alumno " + alumno + " : ");
+            nota = Integer.parseInt(teclado.nextLine());
+            }while(nota < 0 || nota > 10);
+            
+            if (nota >= 5) {
+                System.out.println("alumno " + alumno + " APROBADO");
+                cantAprobado ++;
+            } else if(nota == 4){
+                System.out.println("alumno " + alumno + " CONDICIONADO");
+                cantCondicionado ++;
+            }else {
+                System.out.println("alumno " + alumno + " SUSPENDIDO");
+                cantSuspendido++;
+            }
+        }
+        
+        System.out.println("---------------------");
+        System.out.println("cantidad de alumnos aprobado " + cantAprobado);
+        System.out.println("cantidad de alumnos condicionados " + cantCondicionado);
+        System.out.println("cantidad de alumnos suspendidos " + cantSuspendido);
+
+    }
+}
