@@ -1,0 +1,31 @@
+/*Ejercicio 20: Pedir un número N, introducir N sueldos
+y mostrar el sueldo máximo.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int numero; 
+        float sueldo, sueldoMaximo = 0;
+        
+        System.out.print("ingrese un número: ");
+        numero = Integer.parseInt(teclado.nextLine());
+        
+        for (int i = 1; i <= numero; i++) {
+            System.out.print("ingrese el sueldo: ");
+            sueldo = Float.parseFloat(teclado.nextLine());
+            
+            if (sueldo > sueldoMaximo) {
+                sueldoMaximo = sueldo;
+            }
+        }
+        
+        System.out.println("-------------");
+        System.out.print("el sueldo máximo es de: " + sueldoMaximo);    
+
+    }
+}
