@@ -1,0 +1,69 @@
+/*Ejercicio 18 Hacer unas modificaciones al ejercicio anterior suponiendo que no se introduce 
+el precio por litro. solo existen 3 productos con precios
+1- 0,6$litro
+2- 3$litro
+3- 1,25€litro.
+*/ 
+
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        int codArt, litro, cantFactura = 0, artLitro1 = 0;
+        float precioLitro = 0, facturaTotal, facturaFinal = 0;
+
+        for (int i = 1; i = 5; i++) {
+            System.out.println(factura n°  + i);
+            System.out.print(Código del artículo );
+            codArt = Integer.parseInt(teclado.nextLine());
+
+            System.out.print(Cantidad de litros );
+            litro = Integer.parseInt(teclado.nextLine());
+            
+            switch (codArt) {
+                case 1
+                    precioLitro = 0.6f  litro;
+                    break;
+                case 2
+                    precioLitro = 3f  litro;
+                    break;
+                case 3
+                    precioLitro = 1.2f  litro;
+                    break;
+                default
+                    System.out.println(no pertenece a ningun código de artículo);
+                    precioLitro = 0;
+                    break;
+            }
+
+            facturaTotal = precioLitro;
+
+            System.out.println(--------------);
+            System.out.println(i + -- factura total de $  + facturaTotal);
+            System.out.println(--------------);
+
+            if (codArt == 1) {
+                artLitro1 += litro;
+            }
+
+            if (facturaTotal  600) {
+                cantFactura++;
+            }
+
+            facturaFinal += facturaTotal;
+
+        }
+
+        System.out.print(la cantidad de litros del art 1 vendidos es de  + artLitro1 + L);
+        System.out.println();
+        System.out.println(las facturas mayores a $600 son de + cantFactura);
+        System.out.println();
+        System.out.println(la facturacion total es de $  + facturaFinal);
+
+    }
+}
