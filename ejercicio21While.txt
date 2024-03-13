@@ -1,0 +1,30 @@
+/*Ejercicio 21: Pedir 10 números, y mostrar al final si se ha introducido alguno negativo.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int numero; 
+        boolean negativo = false; 
+        
+        for (int  i = 1;  i <= 10;  i++) {
+            System.out.print(i + "- ingrese un número: ");
+            numero = Integer.parseInt(teclado.nextLine());
+            
+            if (numero < 0) {
+                negativo = true;
+            }
+        }
+        
+        if ( negativo == true) {
+            System.out.println("si existe número negativo");
+        } else {
+            System.out.println("no existe número negativo");
+        }
+
+    }
+}
