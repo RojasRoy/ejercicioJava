@@ -1,0 +1,38 @@
+/*Desarrollar un algoritmo que permita ingresar un ancho y un alto (ambos números deben ser
+positivos). La computadora debe dibujar una matriz de cruces en la consola de tales dimensiones..
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int ancho, alto;
+
+        System.out.print("ingrese el ancho: ");
+        ancho = Integer.parseInt(teclado.nextLine());
+
+        while (ancho <= 0) {
+            System.out.print("ERROR - ingrese el ancho");
+            ancho = Integer.parseInt(teclado.nextLine());
+        }
+
+        System.out.print("ingrese el alto: ");
+        alto = Integer.parseInt(teclado.nextLine());
+
+        while (alto <= 0) {
+            System.out.print("ERROR - ingrese el alto");
+            alto = Integer.parseInt(teclado.nextLine());
+        }
+
+        for (int f = 1; f <= alto; f++) {
+            for (int c = 1; c <= ancho; c++) {
+                System.out.print("X");
+            }
+            System.out.println("");
+        }
+
+    }
+}
