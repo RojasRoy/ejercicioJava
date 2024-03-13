@@ -1,0 +1,30 @@
+/*Ejercicio 22: Pedir 5 calificaciones y decir al final si hay algun suspenso.
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int nota; 
+        boolean notaBaja = false; 
+        
+        for (int  i = 1;  i <= 5;  i++) {
+            System.out.print(i + "- ingrese la nota: ");
+            nota = Integer.parseInt(teclado.nextLine());
+            
+            if (nota < 5) {
+                notaBaja = true;
+            }
+        }
+        
+        if ( notaBaja == true) {
+            System.out.println("si existe alumno suspendido");
+        } else {
+            System.out.println("no existe alumno suspendido");
+        }
+
+    }
+}
