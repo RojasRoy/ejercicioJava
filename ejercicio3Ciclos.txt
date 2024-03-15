@@ -1,0 +1,42 @@
+/*Desarrollar un algoritmo que permita ingresar un nombre de usuario y una contraseña. En caso de
+ser válidos, se imprimirá "Acceso concedido", de lo contrario, se deben volver a pedir las
+credenciales hasta un máximo de tres intentos. Si se supera la cantidad de intentos fallidos, se
+mostrará "Cuenta bloqueada".
+ */
+package practica;
+
+import java.util.Scanner;
+
+public class Practica {
+
+    static final String NOMBRE_VALIDO = "roy";
+    static final String CLAVE_VALIDA = "1234";
+    static final int INTENTOS_MAX = 3;
+    
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        String nombre, clave;
+        int intentos = 0;
+        boolean credencialInvalida;
+        
+        do {  
+            System.out.print("ingrese su nombre: ");
+        nombre = teclado.nextLine();
+        
+        System.out.print("ingrese su clave: ");
+        clave = teclado.nextLine();
+        
+        credencialInvalida = !nombre.equalsIgnoreCase(NOMBRE_VALIDO) || !clave.equals(CLAVE_VALIDA);
+        
+        intentos++;
+        
+        } while (credencialInvalida && intentos < INTENTOS_MAX);
+        
+        if (credencialInvalida) {
+            System.out.println("Se ha bloqueado la cuenta");
+        }else{
+            System.out.println("Acceso concedido");
+        }
+      
+    }
+}
